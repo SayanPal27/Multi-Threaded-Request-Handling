@@ -1,3 +1,4 @@
+
 # Multi-Threaded Request Processing System
 
 ## Overview
@@ -31,6 +32,43 @@ This project implements a multi-threaded request processing system using C++. It
 2. **Worker Struct**: Represents a worker thread with attributes like priority level, resource limits, and a mutex for thread synchronization.
 3. **Service Struct**: Represents a service type containing multiple worker threads and a queue for managing incoming requests.
 4. **Request Handling Functions**: Includes functions for checking queue status, fetching requests, executing requests, and managing worker threads.
+
+## Compilation
+
+To compile the program, use the following command in your terminal:
+
+```bash
+g++ -std=c++11 -pthread -o request_processor main.cpp
+```
+
+Replace `main.cpp` with the actual filename of your C++ source code file.
+
+## Execution
+
+After successful compilation, run the program using the following command:
+
+```bash
+./request_processor
+```
+
+## User Input
+
+When the program starts, it will prompt for the following inputs:
+
+1. **Number of Services**: Enter the number of different service types that the system will manage.
+2. **Number of Threads per Service**: Specify how many worker threads will be assigned to each service type.
+3. **Thread Priority and Resource Capacity**: For each service, enter the priority level and maximum resource capacity for each worker thread.
+4. **Number of Requests**: Enter the total number of requests that the system will process.
+5. **Request Details**: For each request, specify the service type and the number of resources it requires.
+
+## Output
+
+The program will output details on how each request is processed, including:
+
+- **Order of Requests Executed**: Displays the sequence in which requests were processed.
+- **Number of Rejected Requests**: Shows how many requests were rejected due to insufficient resources.
+- **Waiting Time and Turnaround Time**: Displays the waiting time and total turnaround time for each request.
+- **Average Waiting Time and Turnaround Time**: Provides overall metrics for system performance.
 
 ## License
 
